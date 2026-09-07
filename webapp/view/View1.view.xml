@@ -1,0 +1,76 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="trainingmodule.controller.View1">
+    <!-- items="{path: 'oModel>/Products', sorter:{
+            path: 'oModel>Name',
+            descending : false
+            } }" -->
+    <Page showHeader="false">
+
+    <HBox alignItems="Center">
+        <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTop">
+            <Label text="Name" design="Bold"/>
+            <SearchField id="name" width="16rem" placeholder="Search by name" search="onSearchByName"/>
+        </VBox>
+
+
+        <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTop">
+            <Label text="Rating" design="Bold"/>
+            <SearchField id="rating" width="16rem" placeholder="Search by rating" search="onSearchByRating"/>
+        </VBox>
+
+         <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTop">
+            <Label text="Release Date Period" design="Bold"/>
+            <DateRangeSelection width="20rem" change="handleReleaseDateChange" id="drs" showCurrentDateButton="true" showFooter="true"/>
+        </VBox>
+
+        <Button text="Search" press="onFilterTable" class="sapUiLargeMarginBegin sapUiSmallMarginTop"/>
+        </HBox>
+        <Table id="idProductsTable" noDataText="No Products Found" inset="false" items="{path: '/Products', sorter:{             path: 'Name',             descending : false             } }" growing="true" itemPress="onItemPress" growingThreshold="5" growingScrollToLoad="true" mode="SingleSelectMaster">
+            <headerToolbar>
+                <OverflowToolbar>
+                    <content>
+                        <Title text="Products"/>
+                        <ToolbarSpacer/>
+                        <Button type="Emphasized" icon="sap-icon://add-product" press="onAddButtonPress"/>
+                    </content>
+                </OverflowToolbar>
+            </headerToolbar>
+            <columns>
+                <Column width="20em">
+                    <Text text="ID"/>
+                </Column>
+                <Column>
+                    <Text text="Name"/>
+                </Column>
+                <Column minScreenWidth="Tablet" demandPopin="true">
+                    <Text text="Description"/>
+                </Column>
+                <Column minScreenWidth="Tablet" demandPopin="true">
+                    <Text text="Release Date"/>
+                </Column>
+                <Column minScreenWidth="Tablet" demandPopin="true">
+                    <Text text="Rating"/>
+                </Column>
+                <Column minScreenWidth="Tablet" demandPopin="true">
+                    <Text text="Price"/>
+                </Column>
+                <Column minScreenWidth="Tablet" demandPopin="true">
+                    <Text text="Delete"/>
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem type="Active">
+                    <cells>
+                        <Text text="{ID}"/>
+                        <Text text="{Name}"/>
+                        <Text text="{Description}"/>
+                        <Text text="{ReleaseDate}"/>
+                        <Text text="{Rating}"/>
+                        <Text text="{Price}"/>
+                        <Button text="Delete"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>
