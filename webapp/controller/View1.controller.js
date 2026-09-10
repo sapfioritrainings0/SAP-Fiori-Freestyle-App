@@ -2,12 +2,14 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
     "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator"
-], (Controller, MessageToast, Filter, FilterOperator) => {
+    "sap/ui/model/FilterOperator",
+    "trainingmodule/model/formatter"
+], (Controller, MessageToast, Filter, FilterOperator, formatter) => {
     "use strict";
 
     return Controller.extend("trainingmodule.controller.View1", {
 
+        formatter : formatter ,
         // onInit() {
         //     console.log("on init called");
         // },
@@ -50,8 +52,6 @@ sap.ui.define([
 
             // if fetching from an Input instead of SearchField
             // const sQuery = this.byId("idInput").getValue();
-
-
 
             //fetch the table as a UI element
             const oTable = this.byId("idProductsTable");
@@ -113,6 +113,16 @@ sap.ui.define([
             aFilters.push(oFilter2);
             aFilters.push(oFilter3);
             
+        },
+
+        onNextScreen : function()
+        {
+            // const oComponent = this.getOwnerComponent();
+            // const oRouter = oComponent.getRouter();
+            // oRouter.navTo("RouteView2")
+
+
+            this.getOwnerComponent().getRouter().navTo("RouteView2");
         }
 
         

@@ -1,0 +1,9 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="trainingmodule.controller.View2"
+>
+    <Page title="Next screen" showNavButton="true" navButtonPress="onBackPress">
+       
+    </Page>
+</mvc:View>
