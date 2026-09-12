@@ -74,7 +74,8 @@
                         <Button
                             type="Emphasized"
                             icon="sap-icon://add-product"
-                            press="onAddButtonPress"
+                            text="Add Product"
+                            press="onAddProduct"
                         />
                     </content>
                 </OverflowToolbar>

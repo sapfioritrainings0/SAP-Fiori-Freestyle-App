@@ -1,0 +1,52 @@
+<core:FragmentDefinition 
+xmlns:core = "sap.ui.core"
+xmlns="sap.m"
+xmlns:form = "sap.ui.layout.form"
+>
+
+<Dialog id="addProductDialog"
+    title="Add Product"
+    contentWidth="32rem">
+    
+    <form:SimpleForm layout="ResponsiveGridLayout" editable="true">
+    <form:content>
+    <Label text="ID" required="true"></Label>
+    <Input id="inputID" placeholder="Enter ID"></Input>
+    
+      <Label text="Name" required="true"></Label>
+    <Input id="inputName" placeholder="Enter Name"></Input>
+
+<Label text="Description" ></Label>
+    <Input id="inputDescription" placeholder="Enter Description"></Input>
+
+    <Label text="Release Date" ></Label>
+    <DatePicker id="inputReleaseDate" placeholder="Enter Date"></DatePicker>
+
+
+<Label text="Rating" ></Label>
+<StepInput id="idRating" min="0" max="5" step="1"></StepInput>
+
+<Label text="Price" required="true"></Label>
+    <Input id="inputPrice" placeholder="0.00" type="Number" ></Input>
+
+    </form:content>
+    
+    </form:SimpleForm>
+    
+    
+    <beginButton>
+    <Button text="Submit" type="Emphasized" press="onCreateProduct"></Button>
+    </beginButton>
+    <endButton>
+    <Button text="Cancel" type="Reject" press="onCancelDialog"></Button>
+    </endButton>
+    
+    <!-- <buttons>
+    
+    </buttons>
+    
+     -->
+    
+    </Dialog>
+
+</core:FragmentDefinition>

@@ -67,7 +67,8 @@
         "dataSource": "mainService",
         "preload": true,
         "settings": {
-          "maxDataServiceVersion" : "3.0"
+          "maxDataServiceVersion" : "3.0",
+          "useBatch" : false
         }
       },
        "oModel": {
@@ -108,7 +109,7 @@
 
         {
           "name" : "RouteView2",
-          "pattern": "View2",
+          "pattern": "View2/{ID}",  
           "target" : [
             "TargetView2"
           ]

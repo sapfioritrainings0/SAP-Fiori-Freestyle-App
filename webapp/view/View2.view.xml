@@ -1,9 +1,98 @@
 <mvc:View
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:uxap="sap.uxap"
     controllerName="trainingmodule.controller.View2"
 >
-    <Page title="Next screen" showNavButton="true" navButtonPress="onBackPress">
-       
+    <Page
+        title="Object Page"
+        showNavButton="true"
+        navButtonPress="onBackPress"
+    >
+        <uxap:ObjectPageLayout id="objectPage">
+            <!-- ====================================HEADER================================================== -->
+
+            <uxap:headerTitle>
+                <uxap:ObjectPageDynamicHeaderTitle>
+                    <uxap:heading>
+                        <Title text="{oModel>/details/Name}" />
+                    </uxap:heading>
+
+                    <uxap:expandedContent>
+                        <Text text="{oModel>/details/ID}" />
+                    </uxap:expandedContent>
+                </uxap:ObjectPageDynamicHeaderTitle>
+            </uxap:headerTitle>
+
+            <!-- ==================================SECTIONS=================================================== -->
+
+            <uxap:ObjectPageSection
+                title="General Information"
+                titleUppercase="false"
+            >
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="General Information">
+                        <uxap:blocks>
+                            <form:SimpleForm
+                                editable="false"
+                                layout="ResponsiveGridLayout"
+                                labelSpanXL="3"
+                                labelSpanL="3"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                columnsXL="2"
+                                columnsL="2"
+                                columnsM="2"
+                            >
+                                <form:content>
+                                    <Label text="Name" />
+                                    <Text text="{oModel>/details/Name}" />
+
+                                    <Label text="Description" />
+                                    <Text text="{oModel>/details/Description}" />
+                                </form:content>
+                            </form:SimpleForm>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+
+               <uxap:ObjectPageSection
+                title="General Information"
+                titleUppercase="false"
+            >
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Pricing" titleUppercase="true">
+                        <uxap:blocks>
+                            <form:SimpleForm
+                                editable="false"
+                                layout="ResponsiveGridLayout"
+                                labelSpanXL="3"
+                                labelSpanL="3"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                columnsXL="2"
+                                columnsL="2"
+                                columnsM="2"
+                            >
+                                <form:content>
+                                    <Label text="Price" />
+                                    <Text text="{oModel>/details/Price}" />
+
+                                    <Label text="Rating" />
+                                    <Text text="{oModel>/details/Rating}" />
+                                </form:content>
+                            </form:SimpleForm>
+
+
+
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:ObjectPageLayout>
     </Page>
 </mvc:View>
